@@ -8,3 +8,13 @@ Use o menu para: <br>
 5 — Sair do Programa <br>
 
 Ao atualizar as informações de um Aluno, você pode digitar '0' para poder manter as informações do campo atual caso deseje manter algumas informações do aluno.
+
+Grupo 2
+Alunos:
+Emanuel Soares 20250229802
+Julia Costa 202502637799
+Miguel Padilha 202502320001
+Luan 202503170151
+Pedro 202502338881
+
+
