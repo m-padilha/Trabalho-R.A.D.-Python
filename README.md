@@ -2,7 +2,7 @@ Este trabalho simula um Sistema de Gestão Acadêmica usando Python e SQLite
 
 Instruções para abrir o programa:
 - Baixar os arquivos
-- Certificar se estão todos na mesma página
+- Certificar se estão todos na mesma pasta
 - Executar o arquivo interface.py
 
 Se quiser usar apenas as funções CRUD do programa sem uma interface gráfica, abrir terminal.py
