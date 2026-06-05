@@ -21,9 +21,9 @@ def cadastrar():
     nome = entry_nome.get()
     data = entry_data.get()
     curso = entry_curso.get()
-    periodo = entry_periodo.get()
+    nota = entry_nota.get()
 
-    if not nome or not data or not curso or not periodo:
+    if not nome or not data or not curso or not nota:
         messagebox.showwarning(
             "Aviso",
             "Preencha todos os campos."
@@ -35,7 +35,7 @@ def cadastrar():
         nome,
         data,
         curso,
-        int(periodo)
+        float(nota)
     )
 
     limpar_campos()
@@ -75,8 +75,8 @@ def selecionar_aluno(event):
         entry_curso.delete(0, tk.END)
         entry_curso.insert(0, valores[3])
 
-        entry_periodo.delete(0, tk.END)
-        entry_periodo.insert(0, valores[4])
+        entry_nota.delete(0, tk.END)
+        entry_nota.insert(0, valores[4])
 
 def atualizar():
     id_aluno = entry_id.get()
@@ -94,7 +94,7 @@ def atualizar():
         entry_nome.get(),
         entry_data.get(),
         entry_curso.get(),
-        int(entry_periodo.get())
+        float(entry_nota.get())
     )
 
     carregar_tabela()
@@ -139,7 +139,7 @@ def limpar_campos():
     entry_nome.delete(0, tk.END)
     entry_data.delete(0, tk.END)
     entry_curso.delete(0, tk.END)
-    entry_periodo.delete(0, tk.END)
+    entry_nota.delete(0, tk.END)
 
 # === JANELA ===
 
@@ -294,21 +294,21 @@ entry_curso = tk.Entry(
 
 entry_curso.grid(row=1, column=3, padx=4)
 
-# Período
+# Nota
 
 tk.Label(
     frame_form,
-    text="Período",
+    text="Nota",
     **label_style
 ).grid(row=0, column=4, sticky="w", pady=4)
 
-entry_periodo = tk.Entry(
+entry_nota = tk.Entry(
     frame_form,
     width=8,
     **entry_style
 )
 
-entry_periodo.grid(row=1, column=4, padx=4)
+entry_nota.grid(row=1, column=4, padx=4)
 
 # === BOTÕES ===
 
@@ -390,7 +390,7 @@ colunas = (
     "Nome",
     "Nascimento",
     "Curso",
-    "Período"
+    "Nota"
 )
 
 tabela = ttk.Treeview(
@@ -410,7 +410,7 @@ tabela.column("ID", width=60, anchor="center")
 tabela.column("Nome", width=250)
 tabela.column("Nascimento", width=140, anchor="center")
 tabela.column("Curso", width=220)
-tabela.column("Período", width=100, anchor="center")
+tabela.column("Nota", width=100, anchor="center")
 
 # Scrollbar
 
