@@ -12,20 +12,20 @@ def criar_tabela(conn):
             nome TEXT NOT NULL,
             data_nascimento DATE NOT NULL,
             curso TEXT NOT NULL,
-            periodo INTEGER NOT NULL
+            nota FLOAT NOT NULL
         )
     ''')
     conn.commit()
 
 
 # === CREATE ===
-def cadastrar_aluno(conn, nome, data_nasc, curso, periodo):
+def cadastrar_aluno(conn, nome, data_nasc, curso, nota):
     cursor = conn.cursor()
 
     cursor.execute("""
-        INSERT INTO alunos (nome, data_nascimento, curso, periodo)
+        INSERT INTO alunos (nome, data_nascimento, curso, nota)
         VALUES (?, ?, ?, ?)
-    """, (nome, data_nasc, curso, periodo))
+    """, (nome, data_nasc, curso, nota))
 
     conn.commit()
 
@@ -40,18 +40,18 @@ def listar_alunos(conn):
     return cursor.fetchall()
 
 # === UPDATE ===
-def atualizar_aluno(conn, id_aluno, nome, data_nasc, curso, periodo):
+def atualizar_aluno(conn, id_aluno, nome, data_nasc, curso, nota):
     cursor = conn.cursor()
 
     cursor.execute("""
         UPDATE alunos
-        SET nome = ?, data_nascimento = ?, curso = ?, periodo = ?
+        SET nome = ?, data_nascimento = ?, curso = ?, nota = ?
         WHERE id = ?
     """, (
         nome,
         data_nasc,
         curso,
-        periodo,
+        nota,
         id_aluno
     ))
 
